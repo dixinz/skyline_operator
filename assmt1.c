@@ -1,5 +1,4 @@
-/* Dixin Zhang (dixinz@student.unimelb.edu.au)
- * Student ID 804604
+/* Cynthia Zhang 
  * Created on 20/04/2017
  */
 
@@ -22,7 +21,7 @@
 #define MAX_NUM_POINTS 99 /* maximum number of points */
 #define MAX_NUM_DIMENSIONS 10 /* maximum number of dimensions */
 
-#define DIV_BY_HUNDRED 100 /* divides coordinates' sums in stage two */
+#define NORMALISE_COORDINATE_SUM 100 /* divides coordinates' sums in stage two */
 #define DIV_BY_TEN 10 /* divides coordinates' sums in stage two */
 #define NOT_DOMINTAE -1 /* flag to indicate a point is domintaed in stage 5 */
 
@@ -175,8 +174,8 @@ void stage_two(point_t points[], int* num_points, int num_dimensions,
 
     while (k < *num_points) {
         printf("Point %02d, sum of coordinates (/100): ", k + 1);
-        printf("%5.2lf |", coordinate_sums[k] / DIV_BY_HUNDRED);
-        for (i = 1; i < coordinate_sums[k] / DIV_BY_HUNDRED + 1; i++) {
+        printf("%5.2lf |", coordinate_sums[k] / NORMALISE_COORDINATE_SUM);
+        for (i = 1; i < coordinate_sums[k] / NORMALISE_COORDINATE_SUM + 1; i++) {
             if (i % DIV_BY_TEN != 0) {
                 printf("-");
             }
